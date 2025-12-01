@@ -248,6 +248,27 @@ quantize_dynamic(
 
 ---
 
+## Web Demo
+
+The web demo supports two detection modes:
+
+### Image Upload Mode
+Upload images for object detection with bounding boxes and confidence scores.
+
+![Image Upload Detection](img.png)
+
+### Real-time Webcam Mode
+Real-time object detection through webcam feed at ~5 FPS.
+
+![Webcam Real-time Detection](webcam.png)
+
+**Features:**
+- Browser-based inference (no server required)
+- INT8 quantized model (3.2 MB)
+- Support for 5 classes: Airplane, Helicopter, Person, Tank, Vehicle
+
+---
+
 ## References
 
 - [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics)

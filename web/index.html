@@ -217,6 +217,79 @@
         .status-bar.loading {
             color: #ffaa00;
         }
+
+        /* Mode Selector */
+        .mode-selector {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .mode-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: #888;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .mode-btn:hover {
+            border-color: #00d4ff;
+            color: #fff;
+        }
+
+        .mode-btn.active {
+            background: linear-gradient(90deg, #00d4ff, #7c3aed);
+            color: white;
+            border-color: transparent;
+        }
+
+        /* Webcam Section */
+        .webcam-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .webcam-container {
+            position: relative;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        #webcam-video {
+            display: none;
+        }
+
+        #webcam-canvas {
+            width: 100%;
+            max-width: 640px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+
+        .webcam-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .fps-display {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 1.2rem;
+            color: #00d4ff;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -245,6 +318,13 @@
             </div>
         </div>
 
+        <!-- Mode Selection -->
+        <div class="mode-selector">
+            <button class="mode-btn active" id="image-mode-btn">Image Upload</button>
+            <button class="mode-btn" id="webcam-mode-btn">Webcam (Real-time)</button>
+        </div>
+
+        <!-- Image Upload Section -->
         <div class="upload-section" id="upload-section">
             <div class="upload-icon">📷</div>
             <p>Drag and drop an image or click to upload</p>
@@ -253,6 +333,19 @@
             </p>
             <input type="file" id="file-input" accept="image/*">
             <button class="upload-btn" id="upload-btn">Select Image</button>
+        </div>
+
+        <!-- Webcam Section -->
+        <div class="webcam-section" id="webcam-section" style="display: none;">
+            <div class="webcam-container">
+                <video id="webcam-video" autoplay playsinline></video>
+                <canvas id="webcam-canvas"></canvas>
+            </div>
+            <div class="webcam-controls">
+                <button class="upload-btn" id="start-webcam-btn">Start Webcam</button>
+                <button class="upload-btn" id="stop-webcam-btn" style="display: none; background: linear-gradient(90deg, #ff4444, #cc0000);">Stop Webcam</button>
+            </div>
+            <div class="fps-display" id="fps-display">FPS: --</div>
         </div>
 
         <div class="loading" id="loading">
