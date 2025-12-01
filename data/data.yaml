@@ -1,0 +1,16 @@
+names:
+- Airplane
+- Helicopter
+- Person
+- Tank
+- Vehicle
+nc: 5
+roboflow:
+  license: CC BY 4.0
+  project: yolo-military-s48o9
+  url: https://universe.roboflow.com/rl4pcd/yolo-military-s48o9/dataset/1
+  version: 1
+  workspace: rl4pcd
+test: ../test/images
+train: ../train/images
+val: ../valid/images

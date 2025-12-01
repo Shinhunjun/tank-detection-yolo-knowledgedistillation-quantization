@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# YOLO runs (Ultralytics creates these)
+runs/
+
+# Large model files - download from Hugging Face
+# https://huggingface.co/Hunjun/yolo-tank-detection
+models/
+
+# Roboflow cache
+.roboflow/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data (downloaded via script)
+data/train/
+data/valid/
+data/test/
+
+# YOLO pretrained weights
+*.pt
+!web/models/

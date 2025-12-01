@@ -1,0 +1,25 @@
+# YOLO Tank Optimization Project
+# Requirements for Mac M4 (MPS backend)
+
+# Core ML Framework
+ultralytics>=8.0.0
+torch>=2.0.0
+torchvision>=0.15.0
+
+# ONNX for export and quantization
+onnx>=1.14.0
+onnxruntime>=1.15.0
+
+# Data handling
+roboflow
+numpy>=1.24.0
+opencv-python>=4.8.0
+Pillow>=10.0.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Jupyter support (optional)
+ipykernel
+jupyter
